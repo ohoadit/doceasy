@@ -35,7 +35,7 @@ const Login = () => {
             behavior={'height'}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView keyboardShouldPersistTaps="handled">
-                    <View style={{ flex: 1, alignItems: 'center'}}>
+                    <View style={{ flex: 1, alignItems: 'center' }}>
                         <Input
                             name="email"
                             value={creds.username}
@@ -52,10 +52,10 @@ const Login = () => {
                             label="Password"
                             error={errors.password}
                         />
-                        <View style={{ paddingVertical: 30, width: 100 }}>
+                        <View style={{ paddingVertical: 30 }}>
                             <Button
-                                mode="contained"
-                                onPress={() => console.log('Pressed')}>
+                                mode="contained-tonal"
+                                onPress={handleAuth}>
                                 LOG IN
                             </Button>
                         </View>

@@ -4,8 +4,7 @@ import { TextInput, HelperText } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     inputContainer: {
-        display: 'flex',
-        width: '80%',
+        flex: 1,
         marginVertical: 7,
     },
     input: {
@@ -19,10 +18,14 @@ const Input = ({
     onFieldChange,
     name,
     value,
+    multiline,
     error,
     label,
+    keyboardType,
+    numberOfLines,
     password,
     disabled,
+    maxLength,
 }) => {
     const [fieldValue, setFieldValue] = useState(value);
     const [errorText, setErrorText] = useState(error);
@@ -51,10 +54,14 @@ const Input = ({
                     style={styles.input}
                     editable={!disabled}
                     autoCapitalize="none"
+                    keyboardType={keyboardType || 'default'}
                     secureTextEntry={password}
                     spellCheck={false}
                     error={!!errorText}
+                    multiline={multiline}
+                    numberOfLines={numberOfLines}
                     label={label}
+                    maxLength={maxLength}
                 />
                 {errorText && (
                     <HelperText type="error" visible>
